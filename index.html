@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech Text Soluction</title>
+  </head>
+  <style>
+    body {
+      background-color: #314375; 
+      overflow-y: auto;
+    }
+    @media (min-width: 600px) {
+      body {
+        max-height: 100vh;
+      }
+    }
+    .content {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-family: arial;
+      line-height: 30px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+    }
+  </style>
+  <body>
+    <div class="content">
+      <p>
+        This voice synthesizer has paragraph breaking in arrays, thus solving a problem found in Android, which does not allow speech of more than 4000 characters. 
+      </p>
+      <p>
+        At each end of speech, the array index is updated, so the synthesizer only sees paragraph by paragraph. 
+      </p>
+      <p>
+        The pause also follows the paragraph break, because in the synthesizer web API the pause doesn't work very well, after 4 seconds, the audio is canceled and returns to the beginning. 
+      </p>
+      <p>
+        Another bug found on Android is that the language has a name with "_" (underscore), instead of "-" (hyphen), which causes a problem when picking up the voices.
+      </p>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
